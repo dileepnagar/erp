@@ -1,0 +1,10 @@
+DB/Schema name = school
+CREATE TABLE `student` (
+  `percentage` float DEFAULT NULL,
+  `roll_no` int NOT NULL AUTO_INCREMENT,
+  `branch` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `grade` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`roll_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
