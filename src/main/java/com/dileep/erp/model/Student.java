@@ -1,44 +1,51 @@
 package com.dileep.erp.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "student")
+@Table(name = "students")
 public class Student {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int rollNo;
+    private Long id;
 
-    @Column
     private String name;
-    @Column
-    private String email;
-    @Column
     private String grade;
-    @Column
-    private float percentage;
-    @Column
-    private String branch;
+    private String section;
 
-    public Student(){
+    private String email;
+    private String phone;
 
+    private LocalDate dob;
+
+    private String address;
+    private String guardianName;
+
+    public Student() {
     }
 
-    public Student(String name, String email, String grade, float percentage, String branch) {
+    // All-args constructor (optional)
+    public Student(String name, String grade, String section, String email, String phone, LocalDate dob, String address, String guardianName) {
         this.name = name;
-        this.email = email;
         this.grade = grade;
-        this.percentage = percentage;
-        this.branch = branch;
+        this.section = section;
+        this.email = email;
+        this.phone = phone;
+        this.dob = dob;
+        this.address = address;
+        this.guardianName = guardianName;
     }
 
-    public int getRollNo() {
-        return rollNo;
+    // Getters & Setters for all fields
+
+    public Long getId() {
+        return id;
     }
 
-    public void setRollNo(int rollNo) {
-        this.rollNo = rollNo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -49,14 +56,6 @@ public class Student {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getGrade() {
         return grade;
     }
@@ -65,31 +64,51 @@ public class Student {
         this.grade = grade;
     }
 
-    public float getPercentage() {
-        return percentage;
+    public String getSection() {
+        return section;
     }
 
-    public void setPercentage(float percentage) {
-        this.percentage = percentage;
+    public void setSection(String section) {
+        this.section = section;
     }
 
-    public String getBranch() {
-        return branch;
+    public String getEmail() {
+        return email;
     }
 
-    public void setBranch(String branch) {
-        this.branch = branch;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "rollNo=" + rollNo +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", grade='" + grade + '\'' +
-                ", percentage=" + percentage +
-                ", branch='" + branch + '\'' +
-                '}';
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getGuardianName() {
+        return guardianName;
+    }
+
+    public void setGuardianName(String guardianName) {
+        this.guardianName = guardianName;
     }
 }
